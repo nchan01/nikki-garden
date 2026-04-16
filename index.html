@@ -128,16 +128,43 @@
       border-bottom: none;
     }
 
-    .thought p {
+    .thought-body {
       font-size: 0.95rem;
       color: #222;
       margin: 0 0 6px 0;
       white-space: pre-wrap;
+      line-height: 1.6;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+    }
+
+    .thought-body.expanded {
+      display: block;
+      -webkit-line-clamp: unset;
+    }
+
+    .thought-toggle {
+      background: none;
+      border: none;
+      padding: 0;
+      font-size: 0.8rem;
+      color: #bbb;
+      cursor: pointer;
+      font-family: inherit;
+      margin-bottom: 4px;
+      display: block;
+    }
+
+    .thought-toggle:hover {
+      color: #888;
     }
 
     .thought time {
       font-size: 0.75rem;
       color: #bbb;
+      display: block;
     }
   </style>
 </head>
@@ -227,15 +254,27 @@
           container.innerHTML = '<span style="font-size:0.9rem;color:#999">Nothing yet.</span>';
           return;
         }
-        container.innerHTML = thoughts.map(t => `
-          <div class="thought">
-            <p>${t.content}</p>
-            <time>${t.date}</time>
-          </div>`).join('');
+        container.innerHTML = thoughts.map((t, i) => {
+          const dateOnly = t.date.split('·')[0].trim();
+          const needsToggle = t.content.split('\n').length > 3 || t.content.length > 240;
+          return `
+            <div class="thought">
+              <div class="thought-body" id="thought-${i}">${t.content}</div>
+              ${needsToggle ? `<button class="thought-toggle" onclick="toggleThought(${i})">read more</button>` : ''}
+              <time>${dateOnly}</time>
+            </div>`;
+        }).join('');
       })
       .catch(() => {
         document.getElementById('thoughts').innerHTML = '';
       });
+
+    function toggleThought(i) {
+      const body = document.getElementById('thought-' + i);
+      const btn = body.nextElementSibling;
+      const expanded = body.classList.toggle('expanded');
+      btn.textContent = expanded ? 'read less' : 'read more';
+    }
   </script>
 </body>
 </html>
