@@ -177,11 +177,7 @@
   <script>
     const RSS2JSON = 'https://api.rss2json.com/v1/api.json?rss_url=';
 
-    function extractAuthor(description) {
-      const match = description && description.match(/author:\s*([^<\n]+)/i);
-      return match ? match[1].trim() : '';
-    }
-
+    // Substack (still via rss2json — fine for posts, no caching issue)
     // Substack posts
     fetch(RSS2JSON + encodeURIComponent('https://nikkic.substack.com/feed'))
       .then(r => r.json())
@@ -202,46 +198,24 @@
           '<a href="https://nikkic.substack.com/" target="_blank" rel="noopener">Read on Substack →</a>';
       });
 
-    // Currently reading
-    fetch(RSS2JSON + encodeURIComponent('https://www.goodreads.com/review/list_rss/29844189?shelf=currently-reading'))
+    // Goodreads (from static JSON, updated every 30min by GitHub Action)
+    fetch('/goodreads.json?t=' + Date.now())
       .then(r => r.json())
       .then(data => {
-        const container = document.getElementById('currently-reading');
-        container.innerHTML = '';
-        if (!data.items || data.items.length === 0) {
-          container.innerHTML = '<span style="font-size:0.9rem;color:#999">Nothing at the moment</span>';
-          return;
-        }
-        data.items.forEach(item => {
-          const author = extractAuthor(item.description);
-          container.innerHTML += `
-            <div class="book-item">${item.title} / <span class="book-author">${author}</span></div>`;
-        });
-      })
-      .catch(() => {
-        document.getElementById('currently-reading').innerHTML =
-          '<a href="https://www.goodreads.com/user/show/29844189-nikki" target="_blank" rel="noopener">View on Goodreads →</a>';
-      });
+        const cr = document.getElementById('currently-reading');
+        const lr = document.getElementById('last-read');
 
-    // Last read
-    fetch(RSS2JSON + encodeURIComponent('https://www.goodreads.com/review/list_rss/29844189?shelf=read'))
-      .then(r => r.json())
-      .then(data => {
-        const container = document.getElementById('last-read');
-        container.innerHTML = '';
-        if (!data.items || data.items.length === 0) {
-          container.innerHTML = '<li style="font-size:0.9rem;color:#999">Nothing yet</li>';
-          return;
-        }
-        data.items.slice(0, 8).forEach(item => {
-          const author = extractAuthor(item.description);
-          container.innerHTML += `
-            <div class="book-item">${item.title} / <span class="book-author">${author}</span></div>`;
-        });
+        cr.innerHTML = data.currently_reading.length
+          ? data.currently_reading.map(b => `<div class="book-item">${b.title} / <span class="book-author">${b.author}</span></div>`).join('')
+          : '<span style="font-size:0.9rem;color:#999">Nothing at the moment</span>';
+
+        lr.innerHTML = data.read.length
+          ? data.read.map(b => `<div class="book-item">${b.title} / <span class="book-author">${b.author}</span></div>`).join('')
+          : '<span style="font-size:0.9rem;color:#999">Nothing yet</span>';
       })
       .catch(() => {
-        document.getElementById('last-read').innerHTML =
-          '<a href="https://www.goodreads.com/user/show/29844189-nikki" target="_blank" rel="noopener">View on Goodreads →</a>';
+        document.getElementById('currently-reading').innerHTML = '';
+        document.getElementById('last-read').innerHTML = '';
       });
 
     // Thoughts
