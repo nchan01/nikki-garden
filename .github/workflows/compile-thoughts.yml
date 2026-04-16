@@ -1,0 +1,51 @@
+name: Compile thoughts
+
+on:
+  push:
+    paths:
+      - 'thoughts/**'
+    branches: [master]
+
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Compile thoughts to JSON
+        run: |
+          python3 - <<'PYEOF'
+          import os, json
+          from datetime import datetime
+
+          thoughts = []
+          folder = "thoughts"
+
+          for fname in sorted(os.listdir(folder), reverse=True):
+              if not fname.endswith(".md"):
+                  continue
+              with open(os.path.join(folder, fname)) as f:
+                  content = f.read().strip()
+              date_str = fname.replace(".md", "")
+              try:
+                  dt = datetime.strptime(date_str, "%Y-%m-%d-%H%M%S")
+                  date_fmt = dt.strftime("%B %-d, %Y · %-I:%M %p")
+              except:
+                  date_fmt = date_str
+              thoughts.append({"date": date_fmt, "content": content, "id": date_str})
+
+          with open("thoughts.json", "w") as f:
+              json.dump(thoughts, f, indent=2)
+
+          print(f"Compiled {len(thoughts)} thoughts")
+          PYEOF
+
+      - name: Commit thoughts.json
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add thoughts.json
+          git diff --staged --quiet || git commit -m "Update thoughts.json"
+          git push
