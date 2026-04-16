@@ -1,1 +1,1 @@
-4,000 weeks. that'sal
+4,000 weeks. that's all the time we have. well, i have less than th
