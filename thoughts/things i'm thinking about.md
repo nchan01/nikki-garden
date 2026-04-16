@@ -1,1 +1,1 @@
-4,000 weeks. that's all the time we have. well, i have less than that at this point. 
+now that we have our time back from the bots - what are we deciding to do with it? are we becoming more busy or are we choosing to spend that time offline 
