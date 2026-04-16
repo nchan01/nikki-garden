@@ -152,6 +152,28 @@
       white-space: nowrap;
       flex-shrink: 0;
     }
+
+    /* Thoughts */
+    .thought {
+      padding: 14px 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .thought:last-child {
+      border-bottom: none;
+    }
+
+    .thought p {
+      font-size: 0.95rem;
+      color: #222;
+      margin: 0 0 6px 0;
+      white-space: pre-wrap;
+    }
+
+    .thought time {
+      font-size: 0.75rem;
+      color: #bbb;
+    }
   </style>
 </head>
 <body>
@@ -179,6 +201,11 @@
   <div class="section">
     <h2>Last read</h2>
     <ul class="read-list" id="last-read">Loading...</ul>
+  </div>
+
+  <div class="section">
+    <h2>Thinking wasteland</h2>
+    <div id="thoughts">Loading...</div>
   </div>
 
   <script>
@@ -256,6 +283,25 @@
       .catch(() => {
         document.getElementById('last-read').innerHTML =
           '<li><a href="https://www.goodreads.com/user/show/29844189-nikki" target="_blank" rel="noopener">View on Goodreads →</a></li>';
+      });
+
+    // Thoughts
+    fetch('/thoughts.json?t=' + Date.now())
+      .then(r => r.json())
+      .then(thoughts => {
+        const container = document.getElementById('thoughts');
+        if (!thoughts.length) {
+          container.innerHTML = '<span style="font-size:0.9rem;color:#999">Nothing yet.</span>';
+          return;
+        }
+        container.innerHTML = thoughts.map(t => `
+          <div class="thought">
+            <p>${t.content}</p>
+            <time>${t.date}</time>
+          </div>`).join('');
+      })
+      .catch(() => {
+        document.getElementById('thoughts').innerHTML = '';
       });
   </script>
 </body>
