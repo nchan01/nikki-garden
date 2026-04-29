@@ -27,6 +27,14 @@
   ],
   "read": [
     {
+      "title": "Breath: The New Science of a Lost Art",
+      "author": "James Nestor"
+    },
+    {
+      "title": "Four Thousand Weeks: Time Management for Mortals",
+      "author": "Oliver Burkeman"
+    },
+    {
       "title": "Fahrenheit 451",
       "author": "Ray Bradbury"
     },
@@ -49,14 +57,6 @@
     {
       "title": "P\u00e9tronille",
       "author": "Am\u00e9lie Nothomb"
-    },
-    {
-      "title": "The Wall",
-      "author": "Marlen Haushofer"
-    },
-    {
-      "title": "The Door",
-      "author": "Magda Szab\u00f3"
     }
   ]
 }
