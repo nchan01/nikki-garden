@@ -1,10 +1,6 @@
 {
   "currently_reading": [
     {
-      "title": "Strangers: A Memoir of Marriage",
-      "author": "Belle Burden"
-    },
-    {
       "title": "Artful",
       "author": "Ali Smith"
     },
@@ -30,6 +26,10 @@
     }
   ],
   "read": [
+    {
+      "title": "Strangers: A Memoir of Marriage",
+      "author": "Belle Burden"
+    },
     {
       "title": "Breath: The New Science of a Lost Art",
       "author": "James Nestor"
@@ -57,10 +57,6 @@
     {
       "title": "Anna Karenina",
       "author": "Leo Tolstoy"
-    },
-    {
-      "title": "P\u00e9tronille",
-      "author": "Am\u00e9lie Nothomb"
     }
   ]
 }
