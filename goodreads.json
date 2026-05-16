@@ -1,10 +1,6 @@
 {
   "currently_reading": [
     {
-      "title": "Circe",
-      "author": "Madeline Miller"
-    },
-    {
       "title": "Open",
       "author": "Andre Agassi"
     },
@@ -26,6 +22,10 @@
     }
   ],
   "read": [
+    {
+      "title": "Circe",
+      "author": "Madeline Miller"
+    },
     {
       "title": "Things in Nature Merely Grow",
       "author": "Yiyun Li"
@@ -53,10 +53,6 @@
     {
       "title": "Stoner",
       "author": "John  Williams"
-    },
-    {
-      "title": "What I Loved",
-      "author": "Siri Hustvedt"
     }
   ]
 }
