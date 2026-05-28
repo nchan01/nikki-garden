@@ -1,6 +1,22 @@
 {
   "currently_reading": [
     {
+      "title": "Figuring",
+      "author": "Maria Popova"
+    },
+    {
+      "title": "All About Love: New Visions",
+      "author": "bell hooks"
+    },
+    {
+      "title": "Bicycle Diaries",
+      "author": "David   Byrne"
+    },
+    {
+      "title": "The Left Hand of Darkness",
+      "author": "Ursula K. Le Guin"
+    },
+    {
       "title": "Open",
       "author": "Andre Agassi"
     },
@@ -22,6 +38,10 @@
     }
   ],
   "read": [
+    {
+      "title": "Moonbound",
+      "author": "Robin Sloan"
+    },
     {
       "title": "Circe",
       "author": "Madeline Miller"
@@ -49,10 +69,6 @@
     {
       "title": "Finding Grace",
       "author": "Loretta Rothschild"
-    },
-    {
-      "title": "Stoner",
-      "author": "John  Williams"
     }
   ]
 }
