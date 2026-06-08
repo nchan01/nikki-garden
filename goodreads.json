@@ -1,6 +1,10 @@
 {
   "currently_reading": [
     {
+      "title": "No-Drama Discipline: The Whole-Brain Way to Calm the Chaos and Nurture Your Child's Developing Mind",
+      "author": "Daniel J. Siegel"
+    },
+    {
       "title": "Figuring",
       "author": "Maria Popova"
     },
@@ -39,6 +43,10 @@
   ],
   "read": [
     {
+      "title": "Death on the Nile (Hercule Poirot, #18)",
+      "author": "Agatha Christie"
+    },
+    {
       "title": "Moonbound",
       "author": "Robin Sloan"
     },
@@ -65,10 +73,6 @@
     {
       "title": "Fahrenheit 451",
       "author": "Ray Bradbury"
-    },
-    {
-      "title": "Finding Grace",
-      "author": "Loretta Rothschild"
     }
   ]
 }
