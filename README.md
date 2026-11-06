@@ -25,4 +25,4 @@ No libraries, backend, tracking scripts, or hosting subscription required to run
 ## Current positioning notes
 - Home/primary navigation prioritizes launches, project leadership, Notion and team operations, CX and community.
 - YouTube and Substack live on the About / Writing & making pages rather than the homepage.
-- Kickstarter copy: Nikki contributed to most Looking Glass campaigns, which raised US$4.5M+ collectively. This is a company/team total, not individually attributed revenue.
+- Kickstarter copy: Nikki led the Portrait and Go launches and worked across other Looking Glass campaigns. Looking Glass campaigns have raised US$4.5M+ collectively.
