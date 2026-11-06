@@ -517,6 +517,51 @@ body{
   height:100%;
   width:100%;
 }
+.campaign-video-fallback{
+  color:#fff;
+  display:block;
+  height:100%;
+  position:relative;
+  width:100%;
+}
+.campaign-video-fallback img{
+  display:block;
+  height:100%;
+  object-fit:cover;
+  opacity:.82;
+  width:100%;
+}
+.campaign-video-fallback span{
+  align-items:center;
+  background:#15251ed9;
+  border:1px solid #fff9;
+  border-radius:999px;
+  display:flex;
+  font:11px/1.2 var(--mono);
+  gap:9px;
+  left:50%;
+  letter-spacing:.04em;
+  padding:11px 16px;
+  position:absolute;
+  text-transform:uppercase;
+  top:50%;
+  transform:translate(-50%,-50%);
+  white-space:nowrap;
+}
+.campaign-video-fallback span::before{
+  content:"▶";
+  font-size:15px;
+}
+.campaign-video-direct{
+  border-bottom:1px solid #829188;
+  color:var(--moss);
+  display:inline-block;
+  font:10px/1.5 var(--mono);
+  letter-spacing:.055em;
+  margin:11px 2px 0;
+  text-transform:uppercase;
+}
+.campaign-video-direct:hover{border-color:var(--moss)}
 .campaign-credit{
   color:#526057;
   font-size:12px;
