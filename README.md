@@ -1,4 +1,4 @@
-# Nikki Chan — editorial personal & consulting website (v5)
+# Nikki Chan | editorial personal & consulting website (v5)
 
 Static, responsive website. Upload these files to the web root for nikki.garden, or deploy to Netlify.
 
