@@ -419,7 +419,7 @@ body{
 }
 .campaign-showcase-heading h2{
   font-family:var(--serif);
-  font-size:clamp(38px,4.5vw,60px);
+  font-size:clamp(32px,3.6vw,46px);
   letter-spacing:-.05em;
   line-height:1.13;
   margin:13px 0 0;
