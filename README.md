@@ -7,7 +7,7 @@ Home, About, Selected Work, Writing & Making, Services, Kickstarter Launches, Wo
 SEO metadata, Person schema, sitemap.xml, robots.txt, OG card, and responsive layouts.
 
 ## BEFORE PUBLISHING
-1. **Portrait:** Configured with Nikki's approved public LinkedIn profile photo at `assets/portrait.jpg`.
+1. **Portrait:** Configured with Nikki's enhanced public profile photo at `assets/portrait-hd.jpg`.
 2. **Email:** Configured as `nchan01@gmail.com` with a working `mailto:` link.
 3. **Claims:** Nikki approved the 5K+ YouTube subscribers, 10K+ combined YouTube and Instagram audience, monetization, Notion Ambassador status, and Kickstarter totals for publication on November 6, 2026.
 4. **Company:** Your work is described as a portfolio and independent consulting practice. If any work is under NDA, remove the detail.

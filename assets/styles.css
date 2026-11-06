@@ -63,7 +63,7 @@
 @media(max-width:430px){.site-header nav{gap:12px}.site-header nav a{font-size:10px}.site-header nav .nav-contact{order:initial}.creative-hero h1{font-size:43px}.editorial-feature-copy h2{font-size:43px}.magazine-cover>strong{font-size:57px}.editorial-feature-art{min-height:335px}}
 /* Finishing details */
 .creative-hero .margin-note{display:none}
-.portrait-photo{display:block;object-fit:cover;width:100%;aspect-ratio:4/5;filter:saturate(.9)}
+.portrait-photo{display:block;object-fit:cover;object-position:68% center;width:100%;aspect-ratio:4/5;filter:saturate(.9)}
 
 /* Playful spatial-card layer */
 :root{
