@@ -622,6 +622,10 @@ body{
 }
 
 @media(max-width:520px){
+  .launch-proof-metrics{grid-template-columns:1fr;gap:14px}
+  .proof-metric{min-height:0;padding:18px 17px}
+  .proof-number{white-space:normal}
+  .proof-label{max-width:none}
   .creator-proof-grid{grid-template-columns:1fr}
   .creator-proof{min-height:126px}
   .campaign-project{border-radius:15px;padding:16px}
